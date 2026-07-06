@@ -23,6 +23,12 @@
 - [[sources/cpp-memory-models-programmers|C/C++ 程序员的内存模型]] - 2018 年教学笔记，
   解释语言/硬件内存模型、sequential consistency、x86-TSO、ARM/POWER 和 C++11
   atomics/fences；已附中文全文阅读版和图 1-2。
+- [[sources/rdma-fundamentals|RDMA 基础知识（参考笔记）]] - agent 整理的 raw 参考笔记，
+  覆盖 DMA→RDMA、verbs/对象模型、连接类型、内存注册与 pin；综合 NVIDIA manual、IBTA spec、
+  Netdev tutorial、rdma-core。
+- [[sources/rdma-advanced|RDMA 进阶内容（参考笔记）]] - agent 整理的 raw 参考笔记，覆盖
+  IB/RoCE/RoCEv2/iWARP、无损以太网（PFC/ECN/DCQCN）、连接可扩展性、one/two-sided 取舍、
+  MR cache/ODP、GPUDirect/NCCL 与 rail-optimized 拓扑。
 - [[sources/rdma-design-guidelines|Design Guidelines for High Performance RDMA Systems]] -
   USENIX ATC '16 论文，给出 one-sided/two-sided、连接管理与 memory registration 的
   RDMA 工程指南（外部公开来源，未入 raw）。
@@ -66,7 +72,8 @@
 
 ## 对比
 
-暂无对比页面。
+- [[comparisons/rdma-one-sided-vs-two-sided|RDMA: one-sided vs two-sided]] - 按场景
+  对比 RDMA 两类操作，保留 FaRM 与 FaSST/HERD 的研究张力，给出「取决于负载」的决策。
 
 ## 问题
 

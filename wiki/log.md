@@ -131,3 +131,16 @@
 - Notes: 仓库此前已是 git 仓库但无远程；本次配置 `origin` 并首次推送 `main`。
   将累积未提交改动合并为单个 commit (`58c417e`)；通过 `gh` CLI 创建公开仓库并
   完成 HTTPS 授权。`CLAUDE.md` 在仓库中为指向 `AGENTS.md` 的符号链接。
+
+## [2026-07-05] ingest | RDMA 基础知识与进阶内容（raw 参考笔记）
+
+- Source: `raw/inbox/rdma-fundamentals.md` ; `raw/inbox/rdma-advanced.md`
+- Added: [[sources/rdma-fundamentals]], [[sources/rdma-advanced]],
+  [[comparisons/rdma-one-sided-vs-two-sided]]
+- Updated: [[concepts/rdma]], [[syntheses/rdma-reading-guide]], [[wiki/index]]
+- Notes: 补齐此前「RDMA 尚未通过 raw 摄取」「缺少第一手 spec」的洞——agent 综合权威
+  来源（NVIDIA manual、IBTA spec、Netdev tutorial、Design Guidelines/FaRM/FaSST/HERD、
+  GPUDirect RDMA、NCCL、rdma-core）整理成两份 raw 参考笔记（基础 + 进阶）并建来源页；
+  概念页 source_count 2→4 并回填证据引用；阅读导图 source_count 2→4 并标注各层对应的
+  整合笔记；新增 one-sided/two-sided 对比页（首个对比页），保留 FaRM 与 FaSST/HERD 的
+  研究张力。笔记性质为 agent 多来源重组（非单篇剪藏），具体数值/字段仍以原文为准。

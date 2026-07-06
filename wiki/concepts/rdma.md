@@ -3,8 +3,8 @@ title: RDMA
 type: concept
 status: active
 created: 2026-07-03
-updated: 2026-07-03
-source_count: 2
+updated: 2026-07-05
+source_count: 4
 tags: [rdma, networking, infiniband, roce, high-performance]
 ---
 
@@ -20,10 +20,10 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
 本页锚定 RDMA 的核心机制以及与现有 LLM serving / GPU 内容的连接点。分级读物见
 [[syntheses/rdma-reading-guide|RDMA 阅读导图]]。
 
-当前定义主要来自厂商文档（NVIDIA/Mellanox）与学术综述；
-[[sources/rdma-design-guidelines|Design Guidelines]] 与
-[[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]] 已建来源页，其余仍为外部参考。
-详见“证据”章节。
+基础与进阶机制已整理成本地 raw 参考笔记并建来源页
+（[[sources/rdma-fundamentals|基础知识]]、[[sources/rdma-advanced|进阶内容]]），补上此前
+“尚未通过 raw 摄取”的洞；[[sources/rdma-design-guidelines|Design Guidelines]] 与
+[[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]] 为单篇权威来源页。详见“证据”章节。
 
 ## 关键点
 
@@ -48,7 +48,8 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
 - RDMA 编程接口统称 verbs。Linux 用户态实现主要是 libibverbs（数据路径：MR、QP、
   send/recv、read/write）和 librdmacm（用 IP 地址建立连接，把 RDMA 编程拉近 socket
   模型）。
-- 证据：[Netdev 0x16 RDMA Tutorial（Dreier & Gunthorpe）](https://netdevconf.info/0x16/slides/40/RDMA%2520Tutorial.pdf)；
+- 证据：[[sources/rdma-fundamentals|基础知识（verbs/PD/MR/QP/CQ 词汇表）]]；
+  [Netdev 0x16 RDMA Tutorial（Dreier & Gunthorpe）](https://netdevconf.info/0x16/slides/40/RDMA%2520Tutorial.pdf)；
   [RDMAmojo: libibverbs](https://www.rdmamojo.com/2012/05/18/libibverbs/)
 
 ### 内存注册（Memory Region）
@@ -56,6 +57,8 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
 - 要被 RDMA 访问的内存必须先 pin 住并注册成 Memory Region（MR），拿到 lkey / rkey。
   one-sided 操作的“远端地址 + rkey”就是访问凭据。这带来注册开销、MR 缓存、按需
   注册（on-demand paging / ODP）等工程问题。
+- 证据：[[sources/rdma-fundamentals|基础知识（pin/register/lkey/rkey）]]；
+  [[sources/rdma-advanced|进阶内容（MR cache / ODP 与反模式）]]
 
 ### 协议与承载：InfiniBand / RoCE / iWARP
 
@@ -65,7 +68,8 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
   RoCEv2 用 UDP/IP 封装，可跨 L3 路由。要让以太网达到无损，需要 PFC + ECN 等流控与
   拥塞配置，否则性能和稳定性都会塌掉。
 - **iWARP**：另一套基于 TCP 的 RDMA 标准，实际部署比 IB / RoCE 少。
-- 证据：[IBTA RoCEv2 规范更新公告](https://www.roceinitiative.org/infiniband-trade-association-releases-updated-specification-for-remote-direct-memory-access-over-converged-ethernet-roce/)
+- 证据：[[sources/rdma-advanced|进阶内容（IB/RoCE/RoCEv2/iWARP 与无损以太网三件套）]]；
+  [IBTA RoCEv2 规范更新公告](https://www.roceinitiative.org/infiniband-trade-association-releases-updated-specification-for-remote-direct-memory-access-over-converged-ethernet-roce/)
 
 ### 与 GPU / LLM 系统的连接
 
@@ -83,25 +87,31 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
 
 ## 证据
 
+基础与进阶机制已整理成 raw 参考笔记并建来源页（[[sources/rdma-fundamentals|基础知识]]、
+[[sources/rdma-advanced|进阶内容]]），覆盖 verbs/对象模型、协议承载、无损以太网、连接
+可扩展性、MR cache/ODP、one/two-sided 取舍与 GPU/LLM 落点。单篇权威来源另有
 [[sources/rdma-design-guidelines|Design Guidelines]] 与
-[[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]] 已建来源页；其余 RDMA 资源仍以外部
-权威文档为准，尚未通过 raw 摄取建立独立来源页。完整分级读物见
+[[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]]。完整分级读物见
 [[syntheses/rdma-reading-guide|RDMA 阅读导图]]。
 
+- [[sources/rdma-fundamentals|RDMA 基础知识（参考笔记）]]
+- [[sources/rdma-advanced|RDMA 进阶内容（参考笔记）]]
 - [[sources/rdma-design-guidelines|Design Guidelines for High Performance RDMA Systems]]
 - [[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]]
 - [[sources/orca-paper|ORCA 论文]]（NCCL 上下文）
 - 外部参考（暂无来源页）：NVIDIA RDMA Aware Networks Programming User Manual、
-  NCCL User Guide、Netdev 0x16 RDMA Tutorial、IBTA RoCEv2 规范。
+  NCCL User Guide、Netdev 0x16 RDMA Tutorial、IBTA InfiniBand/RoCEv2 规范全文。
 
 ## 张力
 
 - **one-sided 还是 two-sided 更好没有定论**。FaRM 偏向 one-sided read；FaSST、HERD
   主张 two-sided RPC 在真实负载下更好；Design Guidelines 给出“取决于负载”的工程
   结论。保留这种张力，不要默认“one-sided 更快”。
-- RDMA 概念页的事实目前主要依赖厂商文档（NVIDIA/Mellanox）和学术综述，缺少第一手
-  spec（InfiniBand Architecture Specification、RoCEv2 spec 全文）。引用结论时应注意
-  厂商文档会偏向自家产品。
+- 基础与进阶机制已落到本地 raw 参考笔记（[[sources/rdma-fundamentals|基础知识]]、
+  [[sources/rdma-advanced|进阶内容]]），但仍缺第一手 spec 全文（InfiniBand
+  Architecture Specification、RoCEv2 spec）作为来源页；笔记由 agent 综合多来源重组，
+  具体数值/字段应回查原文。厂商文档（NVIDIA/Mellanox）描述自家产品偏向正面，引用结论
+  时需注意。
 
 ## 开放问题
 
@@ -114,6 +124,7 @@ RDMA（Remote Direct Memory Access）让一台机器的网卡（RNIC）直接读
 ## 相关页面
 
 - [[syntheses/rdma-reading-guide|RDMA 阅读导图]]
+- [[comparisons/rdma-one-sided-vs-two-sided|RDMA: one-sided vs two-sided]]
 - [[concepts/llm-serving|LLM serving]]
 - [[concepts/kv-cache|KV cache]]
 - [[entities/orca|ORCA]]

@@ -3,8 +3,8 @@ title: RDMA 阅读导图
 type: synthesis
 status: active
 created: 2026-07-03
-updated: 2026-07-03
-source_count: 2
+updated: 2026-07-05
+source_count: 4
 tags: [rdma, networking, infiniband, roce, study-guide]
 ---
 
@@ -15,10 +15,14 @@ tags: [rdma, networking, infiniband, roce, study-guide]
 这是一份面向“想系统学 RDMA”和“在 GPU / LLM 系统里要用到 RDMA”两类读者的分级读物
 推荐，不是单篇来源的译稿或综合。配套概念页见 [[concepts/rdma|RDMA]]。
 
-所有链接均为经检索核对的权威原始来源（厂商文档、会议论文、官方教程）。其中
-[[sources/rdma-design-guidelines|Design Guidelines]] 与
-[[sources/gpudirect-rdma|GPUDirect RDMA 官方文档]] 已建来源页；其余仍为外部链接，
-尚未通过 raw 摄取进入 `wiki/sources/`。
+所有链接均为经检索核对的权威原始来源（厂商文档、会议论文、官方教程）。已建来源页：
+[[sources/rdma-fundamentals|基础知识（raw 参考笔记）]]（覆盖第 0/1 层的 verbs、对象模型、
+连接类型、内存注册）、[[sources/rdma-advanced|进阶内容（raw 参考笔记）]]（覆盖第 2/3 层的
+协议承载、无损以太网、连接可扩展性、one/two-sided 取舍、MR cache/ODP）、
+[[sources/rdma-design-guidelines|Design Guidelines]]、[[sources/gpudirect-rdma|GPUDirect
+RDMA 官方文档]]；其余仍为外部链接。
+
+one-sided / two-sided 的取舍张力见 [[comparisons/rdma-one-sided-vs-two-sided|对比页]]。
 
 ## 一句话定位
 
