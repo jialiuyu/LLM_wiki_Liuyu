@@ -123,3 +123,11 @@
 - Notes: 把 RDMA 两篇核心资料升级为来源页（外部公开来源，未放入 raw，作为权威背景资料，
   与 ORCA 中 CUDA 官方资料处理一致）；概念页 source_count 0→2 并回填证据引用；保留
   one-sided/two-sided 取舍的张力。
+
+## [2026-07-05] maintenance | 推送到 GitHub 公开托管
+
+- Remote: https://github.com/jialiuyu/LLM_wiki_Liuyu (public)
+- Updated: `.gitignore`（新增 `output/`）
+- Notes: 仓库此前已是 git 仓库但无远程；本次配置 `origin` 并首次推送 `main`。
+  将累积未提交改动合并为单个 commit (`58c417e`)；通过 `gh` CLI 创建公开仓库并
+  完成 HTTPS 授权。`CLAUDE.md` 在仓库中为指向 `AGENTS.md` 的符号链接。
