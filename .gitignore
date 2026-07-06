@@ -12,6 +12,9 @@ __pycache__/
 .obsidian/cache/
 .obsidian/plugins/
 
+# Generated output
+output/
+
 # Temporary files
 *.tmp
 *.bak

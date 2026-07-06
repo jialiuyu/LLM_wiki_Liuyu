@@ -1,11 +1,9 @@
-# Raw Sources
+# 原始来源
 
-This folder stores source material. Treat it as the immutable source-of-truth
-layer.
+这个文件夹存放来源材料。请把它当作不可变的事实来源层。
 
-- Put new files in `raw/inbox/`.
-- Put downloaded images and attachments in `raw/assets/`.
-- Use `raw/processed/` only if you personally want to archive ingested sources.
+- 新文件放入 `raw/inbox/`。
+- 下载的图片和附件放入 `raw/assets/`。
+- 只有在你个人想归档已摄取来源时，才使用 `raw/processed/`。
 
-Agents may read files here, but should not edit source contents.
-
+Agent 可以读取这里的文件，但不应该编辑来源内容。

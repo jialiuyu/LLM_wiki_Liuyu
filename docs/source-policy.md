@@ -1,33 +1,31 @@
-# Source Policy
+# 来源策略
 
-Use this policy when adding material to `raw/`.
+向 `raw/` 添加材料时使用这套策略。
 
-## Allowed Source Forms
+## 允许的来源形式
 
-- Markdown articles
-- PDFs
-- plain text notes
-- transcripts
-- CSV or small data files
-- images and attachments
-- URL reference pages when copying the full source is not appropriate
+- Markdown 文章
+- PDF
+- 纯文本笔记
+- 访谈或视频转录
+- CSV 或小型数据文件
+- 图片和附件
+- 不适合复制全文时的 URL 引用页
 
-## Provenance
+## 来源脉络
 
-Every ingested source should get one page under `wiki/sources/` with:
+每个已摄取来源都应该在 `wiki/sources/` 下有一个页面，包含：
 
-- source title
-- source URL or raw path
-- author, if known
-- publication date, if known
-- ingest date
-- short summary
-- key claims
-- related wiki pages
+- 来源标题
+- 来源 URL 或 raw 路径
+- 作者，如已知
+- 发布日期，如已知
+- 摄取日期
+- 简短摘要
+- 关键观点
+- 相关 wiki 页面
 
-## Copyright And Quoting
+## 版权和引用
 
-Prefer summaries in your own words. Use short excerpts only when the exact
-wording matters. Do not copy full articles into the wiki unless you own the
-content or have permission.
-
+优先用自己的话总结。只有在原文措辞本身很重要时，才使用短摘录。除非你拥有
+内容或获得授权，不要把整篇文章复制进 wiki。

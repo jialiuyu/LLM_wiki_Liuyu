@@ -1,5 +1,5 @@
 ---
-title: Question Title
+title: 问题标题
 type: question
 status: active
 created: YYYY-MM-DD
@@ -10,25 +10,24 @@ question:
 answered: YYYY-MM-DD
 ---
 
-# Question Title
+# 问题标题
 
-## Question
+## 问题
 
-Write the user question.
+写下用户问题。
 
-## Answer
+## 回答
 
-Answer in reusable form with citations.
+用可复用的形式回答，并添加引用。
 
-## Evidence
+## 证据
 
-- [[sources/example-source|Example source]]
+- [[sources/example-source|示例来源]]
 
-## Follow-Ups
+## 后续问题
 
-- Follow-up question.
+- 后续问题。
 
-## Related Pages
+## 相关页面
 
-- [[concepts/related-concept|Related concept]]
-
+- [[concepts/related-concept|相关概念]]

@@ -1,36 +1,33 @@
 ---
-title: Index and log
+title: 索引和日志
 type: concept
 status: seed
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-23
 source_count: 1
 tags: [navigation, logging]
 ---
 
-# Index And Log
+# 索引和日志
 
-`wiki/index.md` and `wiki/log.md` are the two navigation files that keep the
-wiki usable as it grows.
+`wiki/index.md` 和 `wiki/log.md` 是两个导航文件，负责让 wiki 在增长过程中
+仍然可用。
 
-## Index
+## 索引
 
-The index is content-oriented. It lists pages by category with links and
-one-line summaries. Agents should read it before answering questions or
-ingesting related sources.
+索引面向内容。它按类别列出页面、链接和一行摘要。Agent 在回答问题或摄取
+相关来源前，应该先阅读索引。
 
-## Log
+## 日志
 
-The log is chronological and append-only. It records ingests, queries, lint
-passes, schema changes, and maintenance. Consistent headings make it easy to
-inspect recent activity with shell tools.
+日志按时间排列，只能追加。它记录摄取、问答、lint、规范变更和维护动作。
+稳定的标题格式让 shell 工具能快速查看最近活动。
 
-## Evidence
+## 证据
 
-- [[sources/karpathy-llm-wiki-pattern|Karpathy LLM Wiki pattern]]
+- [[sources/karpathy-llm-wiki-pattern|Karpathy 的 LLM Wiki 模式]]
 
-## Related Pages
+## 相关页面
 
-- [[concepts/wiki-schema|Wiki schema]]
+- [[concepts/wiki-schema|Wiki 规范]]
 - [[concepts/llm-wiki|LLM wiki]]
-

@@ -1,5 +1,5 @@
 ---
-title: YYYY-MM-DD Health Check
+title: YYYY-MM-DD 健康检查
 type: lint
 status: active
 created: YYYY-MM-DD
@@ -8,37 +8,36 @@ source_count: 0
 tags: [lint]
 ---
 
-# YYYY-MM-DD Health Check
+# YYYY-MM-DD 健康检查
 
-## Automated Checks
+## 自动检查
 
-- `make check`: PASS or FAIL.
+- `make check`: PASS 或 FAIL。
 
-## Broken Links
+## 断裂链接
 
-- None found.
+- 未发现。
 
-## Orphans
+## 孤立页面
 
-- Pages with no inbound links except the index.
+- 除索引外没有入链的页面。
 
-## Stale Or Contradictory Claims
+## 过时或矛盾陈述
 
-- Claim and recommended repair.
+- 陈述和建议修复方式。
 
-## Missing Pages
+## 缺失页面
 
-- Repeated concept or entity that should become a page.
+- 反复出现、应该独立成页的概念或实体。
 
-## Raw Sources Not Yet Ingested
+## 尚未摄取的 Raw 来源
 
 - `raw/inbox/example.md`
 
-## Repairs Applied
+## 已执行修复
 
-- Change made.
+- 已完成的变更。
 
-## Recommended Next Actions
+## 建议下一步
 
-- Action item.
-
+- 行动项。

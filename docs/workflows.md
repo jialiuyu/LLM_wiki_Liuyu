@@ -1,32 +1,29 @@
-# Workflows
+# 工作流
 
-These workflows are the human-facing version of `AGENTS.md`.
+这些工作流是 `AGENTS.md` 的面向人版本。
 
-## Ingest A Source
+## 摄取来源
 
-1. Add the source to `raw/inbox/`.
-2. Ask the agent to ingest the specific file.
-3. The agent creates a source page under `wiki/sources/`.
-4. The agent updates related concept, entity, synthesis, comparison, or question
-   pages.
-5. The agent updates `wiki/index.md`.
-6. The agent appends `wiki/log.md`.
-7. The agent runs `make check`.
-8. You review the diff.
+1. 把来源放入 `raw/inbox/`。
+2. 要求 agent 摄取指定文件。
+3. agent 在 `wiki/sources/` 下创建来源页。
+4. agent 更新相关 concept、entity、synthesis、comparison 或 question 页面。
+5. agent 更新 `wiki/index.md`。
+6. agent 追加 `wiki/log.md`。
+7. agent 运行 `make check`。
+8. 你审阅 diff。
 
-## Ask A Question
+## 提问
 
-Ask the agent to answer from the wiki first. If the answer produces durable
-knowledge, ask the agent to file it under `wiki/questions/`,
-`wiki/syntheses/`, or `wiki/comparisons/`.
+要求 agent 优先从 wiki 回答。如果答案形成了长期有用的知识，让 agent 把它
+归档到 `wiki/questions/`、`wiki/syntheses/` 或 `wiki/comparisons/`。
 
-## Run A Health Check
+## 做健康检查
 
-Ask the agent to run a lint pass. The output should become a page under
-`wiki/lints/` when it contains useful findings.
+要求 agent 做一次 lint。若输出包含有价值的发现，应在 `wiki/lints/` 下形成
+一页报告。
 
-## Evolve The Schema
+## 演进规范
 
-When you notice repeated maintenance mistakes, update `AGENTS.md`. This is how
-the wiki becomes easier for future agent sessions to maintain.
-
+当你发现重复出现的维护错误时，更新 `AGENTS.md`。这是让未来 agent 会话更容易
+维护这个 wiki 的方式。

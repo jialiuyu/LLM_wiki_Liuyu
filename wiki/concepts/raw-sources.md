@@ -1,37 +1,36 @@
 ---
-title: Raw sources
+title: Raw 来源
 type: concept
 status: seed
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-23
 source_count: 1
 tags: [sources, provenance]
 ---
 
-# Raw Sources
+# Raw 来源
 
-Raw sources are the immutable materials the wiki is based on: articles, papers,
-notes, images, transcripts, datasets, or other files supplied by the user.
+Raw 来源是 wiki 的不可变基础材料：文章、论文、笔记、图片、转录、数据集，
+或用户提供的其他文件。
 
-## Rules
+## 规则
 
-- Store source files under `raw/`.
-- Do not edit source contents.
-- Keep images and attachments local when possible under `raw/assets/`.
-- Create a source page under `wiki/sources/` during ingest.
-- Cite source pages from concept, entity, synthesis, and answer pages.
+- 来源文件存放在 `raw/` 下。
+- 不要编辑来源内容。
+- 图片和附件尽量本地保存到 `raw/assets/`。
+- 摄取时在 `wiki/sources/` 下创建来源页。
+- 在概念、实体、综合和回答页面中引用来源页。
 
-## Why It Matters
+## 为什么重要
 
-The wiki can be revised as interpretations improve, but the raw source layer
-preserves provenance. This keeps later synthesis auditable.
+解释可以随着理解加深而修订，但 raw 来源层保留来源脉络。这让之后的综合判断
+仍然可审计。
 
-## Evidence
+## 证据
 
-- [[sources/karpathy-llm-wiki-pattern|Karpathy LLM Wiki pattern]]
+- [[sources/karpathy-llm-wiki-pattern|Karpathy 的 LLM Wiki 模式]]
 
-## Related Pages
+## 相关页面
 
-- [[concepts/source-backed-answering|Source-backed answering]]
-- [[concepts/wiki-schema|Wiki schema]]
-
+- [[concepts/source-backed-answering|来源支撑的回答]]
+- [[concepts/wiki-schema|Wiki 规范]]

@@ -1,5 +1,5 @@
 ---
-title: Entity Name
+title: 实体名称
 type: entity
 status: active
 created: YYYY-MM-DD
@@ -9,25 +9,24 @@ tags: []
 entity_type: person | organization | project | place | product
 ---
 
-# Entity Name
+# 实体名称
 
-## Summary
+## 摘要
 
-Briefly identify the entity and its relevance to this wiki.
+简要说明这个实体是谁或是什么，以及它与本 wiki 的关系。
 
-## Known Facts
+## 已知事实
 
-- Fact with source citation.
+- 带来源引用的事实。
 
-## Timeline
+## 时间线
 
-- YYYY-MM-DD: Event.
+- YYYY-MM-DD：事件。
 
-## Evidence
+## 证据
 
-- [[sources/example-source|Example source]]
+- [[sources/example-source|示例来源]]
 
-## Related Pages
+## 相关页面
 
-- [[concepts/related-concept|Related concept]]
-
+- [[concepts/related-concept|相关概念]]

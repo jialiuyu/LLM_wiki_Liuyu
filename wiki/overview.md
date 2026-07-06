@@ -1,46 +1,41 @@
 ---
-title: Overview
+title: 总览
 type: synthesis
 status: seed
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-06-23
 source_count: 1
 tags: [llm-wiki, operations]
 ---
 
-# Overview
+# 总览
 
-This repository implements a lightweight [[concepts/llm-wiki|LLM wiki]]: a
-Markdown knowledge base maintained by an agent, grounded in immutable
-[[concepts/raw-sources|raw sources]], and governed by a reusable
-[[concepts/wiki-schema|wiki schema]].
+这个仓库实现了一个轻量级 [[concepts/llm-wiki|LLM wiki]]：它是由 agent
+维护的 Markdown 知识库，以不可变的 [[concepts/raw-sources|raw 来源]] 为基础，
+并由可复用的 [[concepts/wiki-schema|wiki 规范]] 约束。
 
-The starting design follows the pattern in
-[[sources/karpathy-llm-wiki-pattern|Karpathy LLM Wiki pattern]]:
+起始设计遵循
+[[sources/karpathy-llm-wiki-pattern|Karpathy 的 LLM Wiki 模式]]：
 
-- sources live in `raw/`
-- generated knowledge lives in `wiki/`
-- operating rules live in `AGENTS.md`
-- `wiki/index.md` maps the content
-- `wiki/log.md` records the chronology
+- 来源放在 `raw/`
+- 生成知识放在 `wiki/`
+- 操作规则放在 `AGENTS.md`
+- `wiki/index.md` 映射内容
+- `wiki/log.md` 记录时间线
 
-## Operating Model
+## 操作模型
 
-The user chooses what to read and what questions matter. The agent keeps the
-knowledge base maintained by ingesting sources, updating pages, preserving
-links, surfacing contradictions, and filing durable answers.
+用户选择要阅读的资料和重要问题。Agent 通过摄取来源、更新页面、维护链接、
+暴露矛盾、归档长期有用的回答来维护知识库。
 
-## Current Scope
+## 当前范围
 
-This starter intentionally avoids external infrastructure. The repository can
-work with only Markdown, git, Python 3, and an agent that follows `AGENTS.md`.
-If the wiki grows past the point where `wiki/index.md` and simple search are
-enough, a dedicated local search tool can be added without changing the page
-model.
+这个 starter 有意避免外部基础设施。只要有 Markdown、git、Python 3，以及遵守
+`AGENTS.md` 的 agent，仓库就能运作。如果 wiki 增长到 `wiki/index.md` 和简单
+搜索不够用的程度，可以添加专门的本地搜索工具，而不必改变页面模型。
 
-## Related Pages
+## 相关页面
 
-- [[concepts/index-and-log|Index and log]]
-- [[concepts/source-backed-answering|Source-backed answering]]
-- [[concepts/wiki-schema|Wiki schema]]
-
+- [[concepts/index-and-log|索引和日志]]
+- [[concepts/source-backed-answering|来源支撑的回答]]
+- [[concepts/wiki-schema|Wiki 规范]]

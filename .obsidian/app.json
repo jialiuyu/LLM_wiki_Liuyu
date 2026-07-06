@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "raw/assets",
+  "newFileLocation": "current",
+  "useMarkdownLinks": false,
+  "promptDelete": false,
+  "showLineNumber": true,
+  "readableLineLength": false
+}

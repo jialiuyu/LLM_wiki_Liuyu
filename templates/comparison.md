@@ -1,5 +1,5 @@
 ---
-title: Comparison Title
+title: 对比标题
 type: comparison
 status: active
 created: YYYY-MM-DD
@@ -8,23 +8,22 @@ source_count: 0
 tags: []
 ---
 
-# Comparison Title
+# 对比标题
 
-## Summary
+## 摘要
 
-State the comparison outcome.
+说明当前对比结论。
 
-## Table
+## 对比表
 
-| Dimension | Option A | Option B | Evidence |
+| 维度 | 选项 A | 选项 B | 证据 |
 | --- | --- | --- | --- |
-| Example | Value | Value | [[sources/example-source|Source]] |
+| 示例 | 取值 | 取值 | [[sources/example-source|来源]] |
 
-## Interpretation
+## 解读
 
-Explain what the table implies.
+说明这个对比表意味着什么。
 
-## Related Pages
+## 相关页面
 
-- [[concepts/related-concept|Related concept]]
-
+- [[concepts/related-concept|相关概念]]

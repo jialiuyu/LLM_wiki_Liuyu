@@ -1,5 +1,5 @@
 ---
-title: Source Title
+title: 来源标题
 type: source
 status: active
 created: YYYY-MM-DD
@@ -14,27 +14,26 @@ published:
 ingested: YYYY-MM-DD
 ---
 
-# Source Title
+# 来源标题
 
-## Summary
+## 摘要
 
-One paragraph summarizing the source in your own words.
+用自己的话写一段来源摘要。
 
-## Key Claims
+## 关键观点
 
-- Claim one.
-- Claim two.
+- 观点一。
+- 观点二。
 
-## Useful Details
+## 有用细节
 
-- Detail one.
-- Detail two.
+- 细节一。
+- 细节二。
 
-## Tensions
+## 张力
 
-- Note contradictions or caveats with links to related pages.
+- 记录矛盾、限制或注意事项，并链接到相关页面。
 
-## Related Pages
+## 相关页面
 
-- [[concepts/example|Example]]
-
+- [[concepts/example|示例]]

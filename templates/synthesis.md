@@ -1,5 +1,5 @@
 ---
-title: Synthesis Title
+title: 综合标题
 type: synthesis
 status: active
 created: YYYY-MM-DD
@@ -8,25 +8,24 @@ source_count: 0
 tags: []
 ---
 
-# Synthesis Title
+# 综合标题
 
-## Thesis
+## 论点
 
-State the current synthesis in one paragraph.
+用一段话说明当前综合判断。
 
-## Supporting Evidence
+## 支撑证据
 
-- Evidence item with citation.
+- 带引用的证据项。
 
-## Counterpoints And Tensions
+## 反方观点和张力
 
-- Counterpoint with citation.
+- 带引用的反方观点。
 
-## Implications
+## 启示
 
-- Implication one.
+- 启示一。
 
-## Related Pages
+## 相关页面
 
-- [[concepts/related-concept|Related concept]]
-
+- [[concepts/related-concept|相关概念]]
